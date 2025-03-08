@@ -68,5 +68,5 @@
 [#Issue Number]: [Description]
 
 // Example
-[feature]: 로그인 기능 구현
+[#3]: 로그인 기능 구현
 ```
