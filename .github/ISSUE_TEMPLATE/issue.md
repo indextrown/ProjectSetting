@@ -1,13 +1,4 @@
 ---
-name: issue
-about: issue template
-title: ''
-labels: ''
-assignees: ''
-
----
-
----
 name: "\bIssue Templete"
 about: default issue template
 title: ''
