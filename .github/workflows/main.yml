@@ -72,7 +72,7 @@ jobs:
         with:
           script: |
             // 프로젝트 보드의 컬럼 ID를 입력하세요.
-            const columnId = 12345678; // 실제 컬럼 ID로 대체
+            const columnId = Y3Vyc29yOnYyOpLOCmanUaREb25l; // 실제 컬럼 ID로 대체
             // PR의 ID 가져오기
             const prId = context.payload.pull_request.id;
             // GitHub API를 통해 프로젝트 카드 생성
@@ -95,7 +95,7 @@ jobs:
         with:
           script: |
             // 프로젝트 보드의 컬럼 ID를 입력하세요.
-            const columnId = 12345678; // 실제 컬럼 ID로 대체
+            const columnId = Y3Vyc29yOnYyOpLOCmanUadCYWNrbG9n; // 실제 컬럼 ID로 대체
             // 이슈의 ID 가져오기
             const issueId = context.payload.issue.id;
             // GitHub API를 통해 프로젝트 카드 생성
