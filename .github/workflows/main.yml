@@ -1,112 +1,112 @@
 # # 워크플로우 이름: Create Issue Branch
 # name: Create Issue Branch
 
-# # 트리거 이벤트 설정
-# on:
-#   # issues 이벤트: 기본(자동) 모드에서 필요합니다.
-#   # (필요 없으면 제거해도 됩니다.)
-#   issues:
-#     types: [ assigned ]
+# 트리거 이벤트 설정
+on:
+  # issues 이벤트: 기본(자동) 모드에서 필요합니다.
+  # (필요 없으면 제거해도 됩니다.)
+  issues:
+    types: [ assigned ]
 
-#   # issue_comment 이벤트: ChatOps 모드에서 필요합니다.
-#   # (필요 없으면 제거해도 됩니다.)
-#   issue_comment:
-#     types: [ created ]
+  # issue_comment 이벤트: ChatOps 모드에서 필요합니다.
+  # (필요 없으면 제거해도 됩니다.)
+  issue_comment:
+    types: [ created ]
 
-#   # pull_request 이벤트: PR이 닫힐 때 트리거됩니다.
-#   pull_request:
-#     types: [ closed ]
+  # pull_request 이벤트: PR이 닫힐 때 트리거됩니다.
+  pull_request:
+    types: [ closed ]
 
-# jobs:
-#   create_issue_branch_job:
-#     # Ubuntu 최신 버전 환경에서 실행
-#     runs-on: ubuntu-latest
-#     steps:
-#       # 'Create Issue Branch' 액션 실행
-#       - name: Create Issue Branch
-#         # robvanderleek/create-issue-branch 액션 사용 (버전: main)
-#         uses: robvanderleek/create-issue-branch@main
-#         env:
-#           # GitHub 토큰 (비밀 정보) 환경변수로 설정
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  create_issue_branch_job:
+    # Ubuntu 최신 버전 환경에서 실행
+    runs-on: ubuntu-latest
+    steps:
+      # 'Create Issue Branch' 액션 실행
+      - name: Create Issue Branch
+        # robvanderleek/create-issue-branch 액션 사용 (버전: main)
+        uses: robvanderleek/create-issue-branch@main
+        env:
+          # GitHub 토큰 (비밀 정보) 환경변수로 설정
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 # # 워크플로우 이름: Create Issue Branch and Auto Add to Project
 # name: Create Issue Branch and Auto Add to Project
 
-# 트리거 이벤트 설정
-on:
-  # issues 이벤트: 이슈가 assigned 또는 opened 될 때 트리거됨
-  issues:
-    types: [ assigned, opened ]
-  # issue_comment 이벤트: 이슈 댓글이 created 될 때 트리거됨 (ChatOps 모드용)
-  issue_comment:
-    types: [ created ]
-  # pull_request 이벤트: PR이 closed 또는 opened 될 때 트리거됨
-  pull_request:
-    types: [ closed, opened ]
+# # 트리거 이벤트 설정
+# on:
+#   # issues 이벤트: 이슈가 assigned 또는 opened 될 때 트리거됨
+#   issues:
+#     types: [ assigned, opened ]
+#   # issue_comment 이벤트: 이슈 댓글이 created 될 때 트리거됨 (ChatOps 모드용)
+#   issue_comment:
+#     types: [ created ]
+#   # pull_request 이벤트: PR이 closed 또는 opened 될 때 트리거됨
+#   pull_request:
+#     types: [ closed, opened ]
 
-jobs:
-  # [1] Create Issue Branch 기능: 아래 세 가지 이벤트에 반응함
-  # - 이슈가 assigned 되었을 때
-  # - 이슈 댓글이 created 되었을 때
-  # - PR이 closed 되었을 때
-  create_issue_branch_job:
-    if: >
-      (github.event_name == 'issues' && github.event.action == 'assigned') ||
-      (github.event_name == 'issue_comment' && github.event.action == 'created') ||
-      (github.event_name == 'pull_request' && github.event.action == 'closed')
-    runs-on: ubuntu-latest
-    steps:
-      - name: Create Issue Branch
-        uses: robvanderleek/create-issue-branch@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+# jobs:
+#   # [1] Create Issue Branch 기능: 아래 세 가지 이벤트에 반응함
+#   # - 이슈가 assigned 되었을 때
+#   # - 이슈 댓글이 created 되었을 때
+#   # - PR이 closed 되었을 때
+#   create_issue_branch_job:
+#     if: >
+#       (github.event_name == 'issues' && github.event.action == 'assigned') ||
+#       (github.event_name == 'issue_comment' && github.event.action == 'created') ||
+#       (github.event_name == 'pull_request' && github.event.action == 'closed')
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Create Issue Branch
+#         uses: robvanderleek/create-issue-branch@main
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  # [2] PR이 생성되었을 때, 프로젝트에 자동 추가
-  add_pr_to_project:
-    if: (github.event_name == 'pull_request' && github.event.action == 'opened')
-    runs-on: ubuntu-latest
-    steps:
-      - name: PR을 프로젝트에 추가
-        uses: actions/github-script@v6
-        with:
-          script: |
-            // 프로젝트 보드의 컬럼 ID를 입력하세요.
-            const columnId = Y3Vyc29yOnYyOpLOCmanUaREb25l; // 실제 컬럼 ID로 대체
-            // PR의 ID 가져오기
-            const prId = context.payload.pull_request.id;
-            // GitHub API를 통해 프로젝트 카드 생성
-            const card = await github.projects.createCard({
-              column_id: columnId,
-              content_id: prId,
-              content_type: 'PullRequest'
-            });
-            console.log('PR이 프로젝트에 추가되었습니다:', card.data.id);
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#   # [2] PR이 생성되었을 때, 프로젝트에 자동 추가
+#   add_pr_to_project:
+#     if: (github.event_name == 'pull_request' && github.event.action == 'opened')
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: PR을 프로젝트에 추가
+#         uses: actions/github-script@v6
+#         with:
+#           script: |
+#             // 프로젝트 보드의 컬럼 ID를 입력하세요.
+#             const columnId = Y3Vyc29yOnYyOpLOCmanUaREb25l; // 실제 컬럼 ID로 대체
+#             // PR의 ID 가져오기
+#             const prId = context.payload.pull_request.id;
+#             // GitHub API를 통해 프로젝트 카드 생성
+#             const card = await github.projects.createCard({
+#               column_id: columnId,
+#               content_id: prId,
+#               content_type: 'PullRequest'
+#             });
+#             console.log('PR이 프로젝트에 추가되었습니다:', card.data.id);
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  # [3] 이슈가 생성되었을 때, 프로젝트에 자동 추가
-  add_issue_to_project:
-    if: (github.event_name == 'issues' && github.event.action == 'opened')
-    runs-on: ubuntu-latest
-    steps:
-      - name: 이슈를 프로젝트에 추가
-        uses: actions/github-script@v6
-        with:
-          script: |
-            // 프로젝트 보드의 컬럼 ID를 입력하세요.
-            const columnId = Y3Vyc29yOnYyOpLOCmanUadCYWNrbG9n; // 실제 컬럼 ID로 대체
-            // 이슈의 ID 가져오기
-            const issueId = context.payload.issue.id;
-            // GitHub API를 통해 프로젝트 카드 생성
-            const card = await github.projects.createCard({
-              column_id: columnId,
-              content_id: issueId,
-              content_type: 'Issue'
-            });
-            console.log('이슈가 프로젝트에 추가되었습니다:', card.data.id);
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#   # [3] 이슈가 생성되었을 때, 프로젝트에 자동 추가
+#   add_issue_to_project:
+#     if: (github.event_name == 'issues' && github.event.action == 'opened')
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: 이슈를 프로젝트에 추가
+#         uses: actions/github-script@v6
+#         with:
+#           script: |
+#             // 프로젝트 보드의 컬럼 ID를 입력하세요.
+#             const columnId = Y3Vyc29yOnYyOpLOCmanUadCYWNrbG9n; // 실제 컬럼 ID로 대체
+#             // 이슈의 ID 가져오기
+#             const issueId = context.payload.issue.id;
+#             // GitHub API를 통해 프로젝트 카드 생성
+#             const card = await github.projects.createCard({
+#               column_id: columnId,
+#               content_id: issueId,
+#               content_type: 'Issue'
+#             });
+#             console.log('이슈가 프로젝트에 추가되었습니다:', card.data.id);
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
 # name: Create Issue Branch and Auto Add to Project
