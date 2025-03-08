@@ -109,6 +109,68 @@
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
+# name: Create Issue Branch and Auto Add to Project
+
+# on:
+#   issues:
+#     types: [ assigned, opened ]
+#   pull_request:
+#     types: [ opened ]
+
+# jobs:
+#   add_issue_to_project:
+#     if: (github.event_name == 'issues' && github.event.action == 'opened')
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: 이슈를 GitHub Projects v2에 추가
+#         uses: actions/github-script@v6
+#         with:
+#           script: |
+#             const projectId = "PVT_kwHOBCJ3ks4Az4ho"; // ✅ 실제 프로젝트 ID 입력
+#             const issueId = context.payload.issue.node_id;
+#             const response = await github.graphql(`
+#               mutation($projectId: ID!, $contentId: ID!) {
+#                 addProjectV2ItemById(input: { projectId: $projectId, contentId: $contentId }) {
+#                   item {
+#                     id
+#                   }
+#                 }
+#               }
+#             `, {
+#               projectId: projectId,
+#               contentId: issueId
+#             });
+#             console.log('이슈가 프로젝트에 추가되었습니다:', response);
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # ✅ 새로운 PAT 사용
+
+#   add_pr_to_project:
+#     if: (github.event_name == 'pull_request' && github.event.action == 'opened')
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: PR을 GitHub Projects v2에 추가
+#         uses: actions/github-script@v6
+#         with:
+#           script: |
+#             const projectId = "PVT_kwHOBCJ3ks4Az4ho"; // ✅ 실제 프로젝트 ID 입력
+#             const prId = context.payload.pull_request.node_id;
+#             const response = await github.graphql(`
+#               mutation($projectId: ID!, $contentId: ID!) {
+#                 addProjectV2ItemById(input: { projectId: $projectId, contentId: $contentId }) {
+#                   item {
+#                     id
+#                   }
+#                 }
+#               }
+#             `, {
+#               projectId: projectId,
+#               contentId: prId
+#             });
+#             console.log('PR이 프로젝트에 추가되었습니다:', response);
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # ✅ 새로운 PAT 사용
+
+
 name: Create Issue Branch and Auto Add to Project
 
 on:
@@ -126,7 +188,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const projectId = "PVT_kwHOBCJ3ks4Az4ho"; // ✅ 실제 프로젝트 ID 입력
+            const projectId = "PVT_kwHOBCJ3ks4Az4ho"; // ✅ 프로젝트 ID
             const issueId = context.payload.issue.node_id;
             const response = await github.graphql(`
               mutation($projectId: ID!, $contentId: ID!) {
@@ -152,7 +214,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const projectId = "PVT_kwHOBCJ3ks4Az4ho"; // ✅ 실제 프로젝트 ID 입력
+            const projectId = "PVT_kwHOBCJ3ks4Az4ho"; // ✅ 프로젝트 ID
             const prId = context.payload.pull_request.node_id;
             const response = await github.graphql(`
               mutation($projectId: ID!, $contentId: ID!) {
