@@ -17,6 +17,13 @@ jobs:
         uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: "16.1.0"  
+
+      - name: List Xcode Versions
+        run: |
+          echo "Current Xcode version:"
+          xcodebuild -version
+          echo "Installed Xcode versions in /Applications:"
+          ls -1 /Applications | grep Xcode
       
       - name: List available simulators
         run: xcrun simctl list
