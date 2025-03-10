@@ -31,8 +31,10 @@ jobs:
       - name: Boot iPhone 15 Pro Max Simulator
         run: |
           echo "Booting iPhone 15 Pro Max Simulator..."
-          xcrun simctl boot "3329C054-FFBB-4815-8C1D-C66309C867A9" || true
-          echo "List of devices after booting:"
+          xcrun simctl shutdown "3329C054-FFBB-4815-8C1D-C66309C867A9" || true
+          xcrun simctl boot "3329C054-FFBB-4815-8C1D-C66309C867A9"
+          xcrun simctl bootstatus "3329C054-FFBB-4815-8C1D-C66309C867A9" -b
+          echo "Simulator booted. Current devices:"
           xcrun simctl list devices
 
       - name: Start xcode build 🛠
