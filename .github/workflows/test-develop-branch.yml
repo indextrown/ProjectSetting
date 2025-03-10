@@ -11,16 +11,13 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      # 1) 소스 코드 체크아웃
       - uses: actions/checkout@v2
 
-      # 2) 최신 Xcode 버전 세팅 (베타 버전 예시)
       - name: Setup Xcode
-        uses: maxim-lobanov/setup-xcode@v2
+        uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: "15.4.0-beta"  # 실제 사용 가능한 버전 문자열로 변경
+          xcode-version: "15.4.0-beta"  # 실제 사용 가능한 Xcode 베타 버전 문자열로 변경
 
-      # 3) Xcode 빌드 & 테스트
       - name: Start xcode build 🛠
         run: |
           xcodebuild clean test \
