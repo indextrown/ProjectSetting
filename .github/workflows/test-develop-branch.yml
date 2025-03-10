@@ -28,50 +28,58 @@ jobs:
       - name: List available simulators
         run: xcrun simctl list
 
-      - name: Boot iPhone 15 Pro Max Simulator
-        run: |
-          echo "Booting iPhone 15 Pro Max Simulator..."
-          xcrun simctl shutdown "3329C054-FFBB-4815-8C1D-C66309C867A9" || true
-          xcrun simctl boot "3329C054-FFBB-4815-8C1D-C66309C867A9"
-          xcrun simctl bootstatus "3329C054-FFBB-4815-8C1D-C66309C867A9" -b
-          echo "Simulator booted. Current devices:"
-          xcrun simctl list devices
-
       - name: Start xcode build 🛠
         run: |
-          xcodebuild clean test \
+          xcodebuild build \
             -project CICDTest.xcodeproj \
             -scheme CICDTest \
             -destination "id=3329C054-FFBB-4815-8C1D-C66309C867A9"
-# -destination "platform=iOS Simulator,name=iPhone 15 Pro Max,OS=17.0.1"
-            
-            
-# -destination "id=AF8105BA-9529-411E-84D0-E042B4147DDB"
-# -destination "platform=iOS Simulator,name=iPhone 15 Pro Max,OS=17.0.1"
 
-# # workflow 의 이름
+
+
+
 # name: Run Test
 
 # on:
-#   # develop 브랜치에 push 나 pull request 이벤트가 일어났을때 해당 workflow 를 trigger
 #   push:
 #     branches: [ develop ]
 #   pull_request:
 #     branches: [ develop ]
 
-# # workflow의 실행은 하나 이상의 job으로 구성 됨
 # jobs:
-#   # 이 workflow 는 "build" 라는 single job 으로 구성
 #   build:
-#     # job이 실행될 환경 - 최신 mac os
 #     runs-on: macos-latest
 
-#     # Step은 job의 일부로 실행될 일련의 task들을 나타냄
 #     steps:
-#     # uses 키워드를 통해 Github Actions에서 기본으로 제공하는 액션을 사용 가능. 아래 액션은 repository 에 체크아웃하는 것
-#     - uses: actions/checkout@v2
-#     # shell 이용해서 하나의 command 수행
-#     - name: Start xcode build 🛠
-#       run: |
-#         xcodebuild clean test -project CICDTest.xcodeproj -scheme CICDTest -destination 'platform=iOS Simulator,name=iPhone 15 Pro Max,OS=17.0'
+#       - uses: actions/checkout@v2
 
+#       - name: Setup Xcode
+#         uses: maxim-lobanov/setup-xcode@v1
+#         with:
+#           xcode-version: "16.2.0"  
+
+#       - name: List Xcode Versions
+#         run: |
+#           echo "Current Xcode version:"
+#           xcodebuild -version
+#           echo "Installed Xcode versions in /Applications:"
+#           ls -1 /Applications | grep Xcode
+      
+#       - name: List available simulators
+#         run: xcrun simctl list
+
+#       - name: Boot iPhone 15 Pro Max Simulator
+#         run: |
+#           echo "Booting iPhone 15 Pro Max Simulator..."
+#           xcrun simctl shutdown "3329C054-FFBB-4815-8C1D-C66309C867A9" || true
+#           xcrun simctl boot "3329C054-FFBB-4815-8C1D-C66309C867A9"
+#           xcrun simctl bootstatus "3329C054-FFBB-4815-8C1D-C66309C867A9" -b
+#           echo "Simulator booted. Current devices:"
+#           xcrun simctl list devices
+
+#       - name: Start xcode build 🛠
+#         run: |
+#           xcodebuild clean test \
+#             -project CICDTest.xcodeproj \
+#             -scheme CICDTest \
+#             -destination "id=3329C054-FFBB-4815-8C1D-C66309C867A9"
