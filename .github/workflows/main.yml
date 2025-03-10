@@ -1,5 +1,5 @@
-# # 워크플로우 이름: Create Issue Branch
-# name: Create Issue Branch
+# 워크플로우 이름: Create Issue Branch
+name: Create Issue Branch
 
 # 트리거 이벤트 설정
 on:
