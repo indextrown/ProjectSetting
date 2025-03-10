@@ -16,7 +16,7 @@ jobs:
       - name: Setup Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: "15.4.0-beta"  # 실제 사용 가능한 Xcode 베타 버전 문자열로 변경
+          xcode-version: "16.2.0"  
 
       - name: Start xcode build 🛠
         run: |
