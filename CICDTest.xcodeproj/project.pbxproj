@@ -6,33 +6,76 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		DFEC16FB2D7F23D5000DFD0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFEC16DC2D7F23D4000DFD0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFEC16E32D7F23D4000DFD0C;
+			remoteInfo = CICDTest;
+		};
+		DFEC17052D7F23D5000DFD0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DFEC16DC2D7F23D4000DFD0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFEC16E32D7F23D4000DFD0C;
+			remoteInfo = CICDTest;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		DF1BA72E2D7F15F600A38E88 /* CICDTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CICDTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFEC16E42D7F23D4000DFD0C /* CICDTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CICDTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFEC16FA2D7F23D5000DFD0C /* CICDTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CICDTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFEC17042D7F23D5000DFD0C /* CICDTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CICDTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		DF1BA7402D7F15F600A38E88 /* Exceptions for "CICDTest" folder in "CICDTest" target */ = {
+		DFEC170C2D7F23D5000DFD0C /* Exceptions for "CICDTest" folder in "CICDTest" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = DF1BA72D2D7F15F600A38E88 /* CICDTest */;
+			target = DFEC16E32D7F23D4000DFD0C /* CICDTest */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		DF1BA7302D7F15F600A38E88 /* CICDTest */ = {
+		DFEC16E62D7F23D4000DFD0C /* CICDTest */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				DF1BA7402D7F15F600A38E88 /* Exceptions for "CICDTest" folder in "CICDTest" target */,
+				DFEC170C2D7F23D5000DFD0C /* Exceptions for "CICDTest" folder in "CICDTest" target */,
 			);
 			path = CICDTest;
+			sourceTree = "<group>";
+		};
+		DFEC16FD2D7F23D5000DFD0C /* CICDTestTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CICDTestTests;
+			sourceTree = "<group>";
+		};
+		DFEC17072D7F23D5000DFD0C /* CICDTestUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CICDTestUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DF1BA72B2D7F15F600A38E88 /* Frameworks */ = {
+		DFEC16E12D7F23D4000DFD0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFEC16F72D7F23D5000DFD0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFEC17012D7F23D5000DFD0C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,18 +85,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DF1BA7252D7F15F500A38E88 = {
+		DFEC16DB2D7F23D4000DFD0C = {
 			isa = PBXGroup;
 			children = (
-				DF1BA7302D7F15F600A38E88 /* CICDTest */,
-				DF1BA72F2D7F15F600A38E88 /* Products */,
+				DFEC16E62D7F23D4000DFD0C /* CICDTest */,
+				DFEC16FD2D7F23D5000DFD0C /* CICDTestTests */,
+				DFEC17072D7F23D5000DFD0C /* CICDTestUITests */,
+				DFEC16E52D7F23D4000DFD0C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		DF1BA72F2D7F15F600A38E88 /* Products */ = {
+		DFEC16E52D7F23D4000DFD0C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DF1BA72E2D7F15F600A38E88 /* CICDTest.app */,
+				DFEC16E42D7F23D4000DFD0C /* CICDTest.app */,
+				DFEC16FA2D7F23D5000DFD0C /* CICDTestTests.xctest */,
+				DFEC17042D7F23D5000DFD0C /* CICDTestUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,64 +108,134 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DF1BA72D2D7F15F600A38E88 /* CICDTest */ = {
+		DFEC16E32D7F23D4000DFD0C /* CICDTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF1BA7412D7F15F600A38E88 /* Build configuration list for PBXNativeTarget "CICDTest" */;
+			buildConfigurationList = DFEC170D2D7F23D5000DFD0C /* Build configuration list for PBXNativeTarget "CICDTest" */;
 			buildPhases = (
-				DF1BA72A2D7F15F600A38E88 /* Sources */,
-				DF1BA72B2D7F15F600A38E88 /* Frameworks */,
-				DF1BA72C2D7F15F600A38E88 /* Resources */,
+				DFEC16E02D7F23D4000DFD0C /* Sources */,
+				DFEC16E12D7F23D4000DFD0C /* Frameworks */,
+				DFEC16E22D7F23D4000DFD0C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				DF1BA7302D7F15F600A38E88 /* CICDTest */,
+				DFEC16E62D7F23D4000DFD0C /* CICDTest */,
 			);
 			name = CICDTest;
 			packageProductDependencies = (
 			);
 			productName = CICDTest;
-			productReference = DF1BA72E2D7F15F600A38E88 /* CICDTest.app */;
+			productReference = DFEC16E42D7F23D4000DFD0C /* CICDTest.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DFEC16F92D7F23D5000DFD0C /* CICDTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFEC17122D7F23D5000DFD0C /* Build configuration list for PBXNativeTarget "CICDTestTests" */;
+			buildPhases = (
+				DFEC16F62D7F23D5000DFD0C /* Sources */,
+				DFEC16F72D7F23D5000DFD0C /* Frameworks */,
+				DFEC16F82D7F23D5000DFD0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFEC16FC2D7F23D5000DFD0C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DFEC16FD2D7F23D5000DFD0C /* CICDTestTests */,
+			);
+			name = CICDTestTests;
+			packageProductDependencies = (
+			);
+			productName = CICDTestTests;
+			productReference = DFEC16FA2D7F23D5000DFD0C /* CICDTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DFEC17032D7F23D5000DFD0C /* CICDTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFEC17152D7F23D5000DFD0C /* Build configuration list for PBXNativeTarget "CICDTestUITests" */;
+			buildPhases = (
+				DFEC17002D7F23D5000DFD0C /* Sources */,
+				DFEC17012D7F23D5000DFD0C /* Frameworks */,
+				DFEC17022D7F23D5000DFD0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFEC17062D7F23D5000DFD0C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DFEC17072D7F23D5000DFD0C /* CICDTestUITests */,
+			);
+			name = CICDTestUITests;
+			packageProductDependencies = (
+			);
+			productName = CICDTestUITests;
+			productReference = DFEC17042D7F23D5000DFD0C /* CICDTestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		DF1BA7262D7F15F500A38E88 /* Project object */ = {
+		DFEC16DC2D7F23D4000DFD0C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					DF1BA72D2D7F15F600A38E88 = {
+					DFEC16E32D7F23D4000DFD0C = {
 						CreatedOnToolsVersion = 16.2;
+					};
+					DFEC16F92D7F23D5000DFD0C = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = DFEC16E32D7F23D4000DFD0C;
+					};
+					DFEC17032D7F23D5000DFD0C = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = DFEC16E32D7F23D4000DFD0C;
 					};
 				};
 			};
-			buildConfigurationList = DF1BA7292D7F15F500A38E88 /* Build configuration list for PBXProject "CICDTest" */;
+			buildConfigurationList = DFEC16DF2D7F23D4000DFD0C /* Build configuration list for PBXProject "CICDTest" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = DF1BA7252D7F15F500A38E88;
+			mainGroup = DFEC16DB2D7F23D4000DFD0C;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = DF1BA72F2D7F15F600A38E88 /* Products */;
+			productRefGroup = DFEC16E52D7F23D4000DFD0C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DF1BA72D2D7F15F600A38E88 /* CICDTest */,
+				DFEC16E32D7F23D4000DFD0C /* CICDTest */,
+				DFEC16F92D7F23D5000DFD0C /* CICDTestTests */,
+				DFEC17032D7F23D5000DFD0C /* CICDTestUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DF1BA72C2D7F15F600A38E88 /* Resources */ = {
+		DFEC16E22D7F23D4000DFD0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFEC16F82D7F23D5000DFD0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFEC17022D7F23D5000DFD0C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,7 +245,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DF1BA72A2D7F15F600A38E88 /* Sources */ = {
+		DFEC16E02D7F23D4000DFD0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFEC16F62D7F23D5000DFD0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFEC17002D7F23D5000DFD0C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -137,8 +268,21 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DFEC16FC2D7F23D5000DFD0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFEC16E32D7F23D4000DFD0C /* CICDTest */;
+			targetProxy = DFEC16FB2D7F23D5000DFD0C /* PBXContainerItemProxy */;
+		};
+		DFEC17062D7F23D5000DFD0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFEC16E32D7F23D4000DFD0C /* CICDTest */;
+			targetProxy = DFEC17052D7F23D5000DFD0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		DF1BA7422D7F15F600A38E88 /* Debug */ = {
+		DFEC170E2D7F23D5000DFD0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -167,7 +311,7 @@
 			};
 			name = Debug;
 		};
-		DF1BA7432D7F15F600A38E88 /* Release */ = {
+		DFEC170F2D7F23D5000DFD0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -196,7 +340,7 @@
 			};
 			name = Release;
 		};
-		DF1BA7442D7F15F600A38E88 /* Debug */ = {
+		DFEC17102D7F23D5000DFD0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -259,7 +403,7 @@
 			};
 			name = Debug;
 		};
-		DF1BA7452D7F15F600A38E88 /* Release */ = {
+		DFEC17112D7F23D5000DFD0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -315,28 +459,118 @@
 			};
 			name = Release;
 		};
+		DFEC17132D7F23D5000DFD0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGX4B4WC66;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.indextrown.CICDTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CICDTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CICDTest";
+			};
+			name = Debug;
+		};
+		DFEC17142D7F23D5000DFD0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGX4B4WC66;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.indextrown.CICDTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CICDTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CICDTest";
+			};
+			name = Release;
+		};
+		DFEC17162D7F23D5000DFD0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGX4B4WC66;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.indextrown.CICDTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CICDTest;
+			};
+			name = Debug;
+		};
+		DFEC17172D7F23D5000DFD0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LGX4B4WC66;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.indextrown.CICDTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CICDTest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DF1BA7292D7F15F500A38E88 /* Build configuration list for PBXProject "CICDTest" */ = {
+		DFEC16DF2D7F23D4000DFD0C /* Build configuration list for PBXProject "CICDTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DF1BA7442D7F15F600A38E88 /* Debug */,
-				DF1BA7452D7F15F600A38E88 /* Release */,
+				DFEC17102D7F23D5000DFD0C /* Debug */,
+				DFEC17112D7F23D5000DFD0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DF1BA7412D7F15F600A38E88 /* Build configuration list for PBXNativeTarget "CICDTest" */ = {
+		DFEC170D2D7F23D5000DFD0C /* Build configuration list for PBXNativeTarget "CICDTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DF1BA7422D7F15F600A38E88 /* Debug */,
-				DF1BA7432D7F15F600A38E88 /* Release */,
+				DFEC170E2D7F23D5000DFD0C /* Debug */,
+				DFEC170F2D7F23D5000DFD0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFEC17122D7F23D5000DFD0C /* Build configuration list for PBXNativeTarget "CICDTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFEC17132D7F23D5000DFD0C /* Debug */,
+				DFEC17142D7F23D5000DFD0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFEC17152D7F23D5000DFD0C /* Build configuration list for PBXNativeTarget "CICDTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFEC17162D7F23D5000DFD0C /* Debug */,
+				DFEC17172D7F23D5000DFD0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = DF1BA7262D7F15F500A38E88 /* Project object */;
+	rootObject = DFEC16DC2D7F23D4000DFD0C /* Project object */;
 }
