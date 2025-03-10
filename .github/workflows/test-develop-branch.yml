@@ -1,3 +1,5 @@
+# https://sujinnaljin.medium.com/ci-cd-github-actions-를-이용한-xcode-build-test-자동화-73b90a3dcc65
+# https://sujinnaljin.medium.com/ci-cd-github-actions-를-이용한-testflight-업로드-자동화-8ecdbeb227a3
 name: Run Test
 
 on:
