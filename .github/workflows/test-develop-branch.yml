@@ -27,9 +27,10 @@ jobs:
           xcodebuild clean test \
             -project CICDTest.xcodeproj \
             -scheme CICDTest \
-            -destination "id=AF8105BA-9529-411E-84D0-E042B4147DDB"
+            -destination "platform=iOS Simulator,name=iPhone 15 Pro Max,OS=17.0"
             
-
+            
+# -destination "id=AF8105BA-9529-411E-84D0-E042B4147DDB"
 # -destination "platform=iOS Simulator,name=iPhone 15 Pro Max,OS=17.0.1"
 
 # # workflow 의 이름
