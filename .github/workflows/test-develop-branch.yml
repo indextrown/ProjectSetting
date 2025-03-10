@@ -30,56 +30,14 @@ jobs:
 
       - name: Start xcode build 🛠
         run: |
-          xcodebuild clean test \
+          xcodebuild build \
             -project CICDTest.xcodeproj \
             -scheme CICDTest \
             -destination "platform=iOS Simulator,name=iPhone 15 Pro Max,OS=17.5"
 
-
-
-
-# name: Run Test
-
-# on:
-#   push:
-#     branches: [ develop ]
-#   pull_request:
-#     branches: [ develop ]
-
-# jobs:
-#   build:
-#     runs-on: macos-latest
-
-#     steps:
-#       - uses: actions/checkout@v2
-
-#       - name: Setup Xcode
-#         uses: maxim-lobanov/setup-xcode@v1
-#         with:
-#           xcode-version: "16.2.0"  
-
-#       - name: List Xcode Versions
-#         run: |
-#           echo "Current Xcode version:"
-#           xcodebuild -version
-#           echo "Installed Xcode versions in /Applications:"
-#           ls -1 /Applications | grep Xcode
-      
-#       - name: List available simulators
-#         run: xcrun simctl list
-
-#       - name: Boot iPhone 15 Pro Max Simulator
-#         run: |
-#           echo "Booting iPhone 15 Pro Max Simulator..."
-#           xcrun simctl shutdown "3329C054-FFBB-4815-8C1D-C66309C867A9" || true
-#           xcrun simctl boot "3329C054-FFBB-4815-8C1D-C66309C867A9"
-#           xcrun simctl bootstatus "3329C054-FFBB-4815-8C1D-C66309C867A9" -b
-#           echo "Simulator booted. Current devices:"
-#           xcrun simctl list devices
-
-#       - name: Start xcode build 🛠
-#         run: |
-#           xcodebuild clean test \
-#             -project CICDTest.xcodeproj \
-#             -scheme CICDTest \
-#             -destination "id=3329C054-FFBB-4815-8C1D-C66309C867A9"
+      # - name: Start xcode build 🛠
+      #   run: |
+      #     xcodebuild clean test \
+      #       -project CICDTest.xcodeproj \
+      #       -scheme CICDTest \
+      #       -destination "platform=iOS Simulator,name=iPhone 15 Pro Max,OS=17.5"
